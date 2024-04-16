@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -55,7 +56,7 @@ function Header() {
 
   // Search box style
   const searchBoxStyle = {
-    width: "70%",
+    width: "80%",
     position: "relative",
     display: "inline-block",
   };
@@ -74,7 +75,7 @@ function Header() {
   const iconStyle = {
     position: "absolute",
     top: "50%",
-    right: "-40px", // Ensuring it does not move too far
+    right: "10px", // Ensuring it does not move too far
     transform: "translateY(-50%)",
     cursor: "pointer",
     color: "#db4444",
@@ -86,7 +87,8 @@ function Header() {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    marginLeft: "100px", // Ensure there's some space after the search box
+    cursor: "pointer",
+    marginLeft: "50px", // Ensure there's some space after the search box
   };
 
   return (
@@ -94,15 +96,15 @@ function Header() {
       <h5 style={logoStyle}>EXCLUSIVE</h5>
       <div style={navStyle}>
         {["home", "contact", "about", "signUp"].map((link, index) => (
-          <a
+          <Link
             key={link}
+            to={link === "signUp" ? "/signup" : `/${link}`} // Dynamically set the path
             style={navLinkStyle(link)}
-            href="#"
             onMouseEnter={() => setIsHovered({ ...isHovered, [link]: true })}
             onMouseLeave={() => setIsHovered({ ...isHovered, [link]: false })}
           >
             {link.charAt(0).toUpperCase() + link.slice(1)}
-          </a>
+          </Link>
         ))}
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>

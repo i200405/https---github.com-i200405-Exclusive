@@ -1,6 +1,6 @@
 import React from "react";
 
-function Login() {
+function Signup() {
   // Inline styles
   const containerStyle = {
     display: "flex",
@@ -24,7 +24,6 @@ function Login() {
   const headingStyle = {
     marginBottom: "20px", // Add bottom margin to the heading
   };
-
   const inputGroupStyle = {
     marginBottom: "1.5rem",
     position: "relative",
@@ -59,10 +58,6 @@ function Login() {
     cursor: "pointer",
   };
 
-  const buttonHoverStyle = {
-    backgroundColor: "#852828",
-  };
-
   const switchFormStyle = {
     textAlign: "center",
     marginTop: "1rem",
@@ -77,8 +72,12 @@ function Login() {
     <div style={containerStyle}>
       <main className="container-fluid">
         <div style={formContainerStyle}>
-          <h2 style={headingStyle}>Login</h2>
-          <form action="/submit-login" method="post">
+          <h2 style={headingStyle}>Sign Up</h2>
+          <form action="/submit-signup" method="post">
+            <div style={inputGroupStyle}>
+              <input type="text" required name="username" style={inputStyle} />
+              <label style={labelStyle}>Username</label>
+            </div>
             <div style={inputGroupStyle}>
               <input type="email" required name="email" style={inputStyle} />
               <label style={labelStyle}>Email</label>
@@ -92,18 +91,27 @@ function Login() {
               />
               <label style={labelStyle}>Password</label>
             </div>
+            <div style={inputGroupStyle}>
+              <input
+                type="password"
+                required
+                name="confirmPassword"
+                style={inputStyle}
+              />
+              <label style={labelStyle}>Confirm Password</label>
+            </div>
             <button
               type="submit"
               style={buttonStyle}
               onMouseOver={(e) => (e.target.style.backgroundColor = "#852828")}
               onMouseOut={(e) => (e.target.style.backgroundColor = "#db4444")}
             >
-              Login
+              Sign Up
             </button>
             <p style={switchFormStyle}>
-              Don't have an account?{" "}
-              <a href="/signup" style={linkStyle}>
-                Sign Up
+              Already have an account?{" "}
+              <a href="/login" style={linkStyle}>
+                Log In
               </a>
             </p>
           </form>
@@ -113,4 +121,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;
