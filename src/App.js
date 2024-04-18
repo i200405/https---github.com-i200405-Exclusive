@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
+import EditProfile from "./pages/EditProfile";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -26,6 +28,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/editprofile" element={<EditProfile />} />
             {/* Additional routes here */}
           </Routes>
         </main>
