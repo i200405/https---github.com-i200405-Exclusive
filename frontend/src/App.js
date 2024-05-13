@@ -9,6 +9,10 @@ import Checkout from "./pages/Checkout";
 import EditProfile from "./pages/EditProfile";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CartPage from "./pages/Cart";
+import ContactPage from "./pages/ContactUs"
+import ProductPage from "./pages/product"
+import AboutPage  from "./pages/About";
 
 function App() {
   const appStyle = {
@@ -30,6 +34,10 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/editprofile" element={<EditProfile />} />
+            <Route path="/cart" element={<CartPage/>}/>
+            <Route path="/contact" element={<ContactPage/>}/>
+            <Route path="/product" element={<ProductPage/>}/>
+            <Route path="/about" element={<AboutPage/>}/>
             {/* Additional routes here */}
           </Routes>
         </main>

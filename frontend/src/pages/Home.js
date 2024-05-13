@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Import images
 import res1 from "../resources/res1.png";
@@ -18,6 +18,9 @@ import categoryIcon5 from "../resources/Category-Icon5.png";
 import categoryIcon6 from "../resources/Category-Icon6.png";
 
 function HomePage() {
+  // Using useState properly inside the component
+  const [images, setImages] = useState([res1, res2, res3, res4, res5, res6, res7, res8]);
+
   // Inline styles
   const containerStyle = {
     padding: "20px 200px",
@@ -67,6 +70,7 @@ function HomePage() {
     fontSize: "30px",
     margin: "50px 0",
   };
+
   const categorySectionStyle = {
     display: "flex",
     justifyContent: "space-around",
@@ -131,7 +135,7 @@ function HomePage() {
       </div>
       <h3 style={headingStyle}>Best Selling Products</h3>
       <div style={gridStyle}>
-        {[res1, res2, res3, res4].map((image, index) => (
+        {images.map((image, index) => (
           <div key={index} style={cardStyle}>
             <img src={image} alt={`Product ${index + 1}`} style={imageStyle} />
             <p style={textStyle}>Product Name {index + 1}</p>
@@ -145,8 +149,8 @@ function HomePage() {
 
       <h3 style={headingStyle}>Explore Our Products</h3>
       <div style={gridStyle}>
-        {[res5, res6, res7, res8].map((image, index) => (
-          <div key={index} style={cardStyle}>
+        {images.slice(4, 8).map((image, index) => (
+          <div key={index + 4} style={cardStyle}>
             <img src={image} alt={`Product ${index + 5}`} style={imageStyle} />
             <p style={textStyle}>Product Name {index + 5}</p>
             <p style={priceStyle}>$260</p>

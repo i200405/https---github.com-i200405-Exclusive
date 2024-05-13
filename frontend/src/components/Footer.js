@@ -6,6 +6,8 @@ import facebookIcon from "../resources/Icon-Facebook.png";
 import twitterIcon from "../resources/Group.png";
 import instagramIcon from "../resources/icon-instagram.png";
 import linkedInIcon from "../resources/Icon-Linkedin.png";
+import { Link } from 'react-router-dom';
+
 
 function Footer() {
   const footerStyle = {
@@ -90,19 +92,14 @@ function Footer() {
             <h6 className="text-uppercase fw-bold">Account</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="login.html" style={linkStyle}>
-                  My Account
-                </a>
+              <Link to="/editprofile" style={linkStyle}>My Account</Link>
+            
               </li>
               <li>
-                <a href="login.html" style={linkStyle}>
-                  Login / Register
-                </a>
+              <Link to="/login" style={linkStyle}>Login</Link>
               </li>
               <li>
-                <a href="login.html" style={linkStyle}>
-                  Cart
-                </a>
+                <Link to="/cart" style={linkStyle}>Cart</Link>
               </li>
               <li>
                 <a href="login.html" style={linkStyle}>
@@ -136,9 +133,7 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="login.html" style={linkStyle}>
-                  Contact
-                </a>
+              <Link to="/contact" style={linkStyle}>Contact</Link>
               </li>
             </ul>
           </div>
